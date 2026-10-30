@@ -1,0 +1,4 @@
+// ===== inicialização =====
+initChrome();
+fromHash();
+render();

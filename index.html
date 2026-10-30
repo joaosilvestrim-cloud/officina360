@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oficina 360</title>
+<meta name="description" content="Oficina 360 — gestão integrada para oficinas: CRM, orçamentos, ordens de serviço, agenda, estoque, financeiro, marketing e dashboards.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/app.css?v=3">
+</head>
+<body>
+<div id="login" class="hidden"></div>
+<div id="hub" class="hidden"></div>
+<div class="app hidden" id="app">
+  <aside class="side" id="side">
+    <div class="brand" onclick="toHub()" title="Voltar para os módulos"><span id="brandLogo"></span><div class="wm"><b>Oficina<span>360</span></b><small>Gestão integrada</small></div></div>
+    <nav class="nav" id="nav"></nav>
+    <div class="unit"><span class="av sm lime">OA</span><div><b>Oficina do Arthur</b><small>Bosch Car Service</small></div></div>
+  </aside>
+  <div class="scrim" onclick="toggleNav(false)"></div>
+  <main>
+    <header class="top">
+      <button class="iconbtn only-m" onclick="toggleNav()" aria-label="Menu" id="mMenu"></button>
+      <button class="iconbtn" onclick="toHub()" title="Módulos" id="hubBtn"></button>
+      <div class="crumbs" id="crumbs"></div>
+      <button class="search" onclick="openPalette()" id="searchBtn"></button>
+      <div class="ddwrap"><button class="btn" onclick="toggleDD('novo')" id="novoBtn"></button><div class="dd" id="dd-novo"></div></div>
+      <div class="ddwrap"><button class="iconbtn" onclick="toggleDD('notif')" id="bellBtn" aria-label="Notificações"></button><div class="dd wide" id="dd-notif"></div></div>
+      <div class="ddwrap"><button class="userbtn" onclick="toggleDD('user')" id="userBtn"></button><div class="dd" id="dd-user"></div></div>
+    </header>
+    <section id="view"></section>
+  </main>
+</div>
+<div class="drawerwrap" id="drawerWrap"><div class="dscrim" onclick="closeDrawer()"></div><aside class="drawer" id="drawer"></aside></div>
+<div id="modal" class="modal hidden" onmousedown="if(event.target===this)closeModal()"><div class="mbox" id="mbox"></div></div>
+<div id="palette" class="modal hidden" onmousedown="if(event.target===this)closePalette()"><div class="pbox"><div class="pin" id="palHead"><input id="palIn" placeholder="Buscar cliente, placa, OS, peça ou ação…" oninput="PAL.q=this.value;PAL.i=0;palRender()" onkeydown="palKey(event)" autocomplete="off"><kbd>Esc</kbd></div><div id="palRes"></div></div></div>
+<div id="toasts"></div>
+
+<script src="js/core.js?v=3"></script>
+<script src="js/data.js?v=3"></script>
+<script src="js/charts.js?v=3"></script>
+<script src="js/shell.js?v=3"></script>
+<script src="js/dashboards.js?v=3"></script>
+<script src="js/crm.js?v=3"></script>
+<script src="js/marketing.js?v=3"></script>
+<script src="js/orcamentos.js?v=3"></script>
+<script src="js/os.js?v=3"></script>
+<script src="js/agenda.js?v=3"></script>
+<script src="js/estoque.js?v=3"></script>
+<script src="js/financeiro.js?v=3"></script>
+<script src="js/config.js?v=3"></script>
+<script src="js/main.js?v=3"></script>
+</body>
+</html>
